@@ -46,16 +46,16 @@ namespace DDJJ1887
 	        {
 	        	int _tipo_registro_paso = 0;
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Tipo Registro" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Tipo Registro" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value.Length != 1)
-	        		errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero de un digito" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero de un digito" + "</error></fila>");
 	        	if (!int.TryParse(value, out _tipo_registro_paso))
 	        	{
-	        		errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero" + "</error></fila>");
 	        	}
 	        	if ( _tipo_registro_paso != 1)
 	        	{
-	        		errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Tipo Registro" + ";" + "valor debe ser el numero 1" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Tipo Registro" + ";" + "valor debe ser el numero 1" + "</error></fila>");
 	        	}
 	        	
 	        	_tipo_registro = _tipo_registro_paso.ToString();
@@ -70,11 +70,11 @@ namespace DDJJ1887
 	        {
 	        	int _determina_orden_preced_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 1" + ";" + "Orden Preced" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 1" + ";" + "Orden Preced" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _determina_orden_preced_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 1" + ";" + "Orden Preced" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 1" + ";" + "Orden Preced" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (_determina_orden_preced_paso!=1)
-	            	errores.escribir_error("<error>" + "Registro tipo 1 1" + ";" + "Orden Preced" + ";" + "valor debe el número 1" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 1" + ";" + "Orden Preced" + ";" + "valor debe el número 1" + "</error></fila>");
 	        	_determina_orden_preced = _determina_orden_preced_paso.ToString();
 	        	
 	        }
@@ -89,11 +89,11 @@ namespace DDJJ1887
 	        	int _ano_tributario_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
 	                
-	            	errores.escribir_error("<error>" + "Registro tipo 1 1" + ";" + "Año tributario" + ";" + "valor no puede ser vacío" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 1" + ";" + "Año tributario" + ";" + "valor no puede ser vacío" + "</error></fila>");
 	        	if (!int.TryParse(value, out _ano_tributario_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 1" + ";" + "Año tributario" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 1" + ";" + "Año tributario" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (_ano_tributario_paso != 2023)
-	            	errores.escribir_error("<error>" + "Registro tipo 1 1" + ";" + "Año tributario" + ";" + "Año no soportado por actual versión de DDJJ" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 1" + ";" + "Año tributario" + ";" + "Año no soportado por actual versión de DDJJ" + "</error></fila>");
 
 	        	_ano_tributario = _ano_tributario_paso.ToString();
 	        }
@@ -107,11 +107,11 @@ namespace DDJJ1887
 	        {
 	        	int _numero_formulario_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	               errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Número de Formulario" + ";" + "valor no puede ser vacio" + "</error>");
+	               errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Número de Formulario" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _numero_formulario_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Número de Formulario" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Número de Formulario" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if ( _numero_formulario_paso != 1887)
-	        		errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Número de Formulario" + ";" + "valor debe ser el formulario 1887" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Número de Formulario" + ";" + "valor debe ser el formulario 1887" + "</error></fila>");
 	        	_numero_formulario = _numero_formulario_paso.ToString();
 	        }
 	    }
@@ -123,9 +123,9 @@ namespace DDJJ1887
 	        set
 	        {
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código Presentación" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Código Presentación" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value != "I")
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código Presentación" + ";" + "valor debe ser la letra I" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Código Presentación" + ";" + "valor debe ser la letra I" + "</error></fila>");
 	        	_codigo_presentacion = value;
 	        }
 	    }
@@ -138,11 +138,11 @@ namespace DDJJ1887
 	        {
 	        	int _folio_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Folio" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Folio" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _folio_paso) )
-	            	errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Folio" + ";" + "valor debe ser numerico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Folio" + ";" + "valor debe ser numerico" + "</error></fila>");
 	        	if (_folio_paso < 1 )
-	        		errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Folio" + ";" + "valor debe ser numerico mayor a cero" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Folio" + ";" + "valor debe ser numerico mayor a cero" + "</error></fila>");
 	        	_n_de_folio = _folio_paso.ToString().PadLeft(7,'0');
 	        }
 	    }
@@ -154,9 +154,9 @@ namespace DDJJ1887
 	        set
 	        {
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Tipo de Declaración" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Tipo de Declaración" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value != "O" && value != "R")
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Tipo de Declaración" + ";" + "valor debe ser la letra O o la letra R" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Tipo de Declaración" + ";" + "valor debe ser la letra O o la letra R" + "</error></fila>");
 	        	_tipo_declaracion = value;
 	        }
 	    }
@@ -172,9 +172,9 @@ namespace DDJJ1887
 	        	{
 	        	
 		        	if (string.IsNullOrWhiteSpace(value.ToString()))
-		                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Rut Anterior" + ";" + "valor no puede ser vacio" + "</error>");
+		                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Rut Anterior" + ";" + "valor no puede ser vacio" + "</error></fila>");
 		        	if (!int.TryParse(value, out _numero_rut_paso))
-		            	errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Rut Anterior" + ";" + "valor debe ser numérico" + "</error>");
+		            	errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Rut Anterior" + ";" + "valor debe ser numérico" + "</error></fila>");
 		        	}
 	        	
 	        	
@@ -193,12 +193,12 @@ namespace DDJJ1887
 	        	if (this.tipo_declaracion=="R")
 	        	{
 	        		if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Dígito verificador anterior" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Dígito verificador anterior" + ";" + "valor no puede ser vacio" + "</error></fila>");
 		        	if (int.Parse(numero_rut_anterior) > 0)
 		        	{
 		        		if (value != validaciones.Digito (int.Parse(numero_rut_anterior)))
 		        		{
-		        			errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Dígito verificador anterior" + ";" + "Error en dígito verificador rut erroneo" + "</error>");
+		        			errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Dígito verificador anterior" + ";" + "Error en dígito verificador rut erroneo" + "</error></fila>");
 		        		}
 		        	}
 		        	_digito_verificador_anterior = value;
@@ -223,10 +223,10 @@ namespace DDJJ1887
 	        	if (this.tipo_declaracion=="R")
 	        	{
 	        		if (string.IsNullOrEmpty(value.ToString()))
-	                	errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor no puede ser vacio" + "</error>");
+	                	errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor no puede ser vacio" + "</error></fila>");
 		        	
 	        		if (value != "I" && value != "M" &&  value != "F" )
-	        			errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor debe ser I,F 0 M" + "</error>");
+	        			errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor debe ser I,F 0 M" + "</error></fila>");
 		        	_codigo_presentacion_anterior = value;
 	        	}else
 	        	{
@@ -248,12 +248,12 @@ namespace DDJJ1887
 	        	{
 	        		int _n_de_folio_anterior_paso = 0;
 		        	if (string.IsNullOrEmpty(value.ToString()))
-		                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Múmero Folio anterior" + ";" + "valor no puede ser vacio" + "</error>");
+		                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Múmero Folio anterior" + ";" + "valor no puede ser vacio" + "</error></fila>");
 		        	
 		        	if (!int.TryParse(value, out _n_de_folio_anterior_paso))
-	        			errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor debe ser I,F 0 M" + "</error>");
+	        			errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor debe ser I,F 0 M" + "</error></fila>");
 	        		if (_n_de_folio_anterior_paso < 1)
-	        			errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor debe ser mayor a 0" + "</error>");
+	        			errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor debe ser mayor a 0" + "</error></fila>");
 	        		_n_de_folio_anterior = _n_de_folio_anterior_paso.ToString().PadLeft(7,'0');
 		        }else
 	        	{
@@ -274,11 +274,11 @@ namespace DDJJ1887
 	        {
 	        	int _numero_rut_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Rut declarante" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Rut declarante" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _numero_rut_paso))
-	        		errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Rut declarante" + ";" + "valor debe ser numérico" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Rut declarante" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (_numero_rut_paso < 1 )
-	        		errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Rut declarante" + ";" + "valor debe ser numérico mayor a 1" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Rut declarante" + ";" + "valor debe ser numérico mayor a 1" + "</error></fila>");
 	        	_numero_rut_declarante = _numero_rut_paso.ToString().PadLeft(8, '0');
 	        }
 	    }
@@ -290,9 +290,9 @@ namespace DDJJ1887
 	        set
 	        {
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Dígito verificador declarante" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Dígito verificador declarante" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value != validaciones.Digito (int.Parse(numero_rut_declarante)))
-	        		errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Dígito verificador declarante" + ";" + "Dígito verificador erroneo" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Dígito verificador declarante" + ";" + "Dígito verificador erroneo" + "</error></fila>");
 	        	
 	        	_digito_verificador_declarante = value;
 	        }
@@ -305,7 +305,7 @@ namespace DDJJ1887
 	        set
 	        {
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Razón Social" + ";" + "Debe tener al menos 1 caracter alfanumérico" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1" + ";" + "Razón Social" + ";" + "Debe tener al menos 1 caracter alfanumérico" + "</error></fila>");
 	        	if (value.Length < 30)
 	        	{
 	        		_razon_social = value.PadRight(30 - value.Length, ' ');
@@ -334,7 +334,7 @@ namespace DDJJ1887
 	    		return salida ;
     		}else
     		{
-    			errores.escribir_error("<error>" + "DDJJ 1887" + ";" + "retorna_registro_tipo_1_1" + ";" + "año no soportado para esta version" + "</error>");
+    			errores.escribir_error("<fila><error>" + "DDJJ 1887" + ";" + "retorna_registro_tipo_1_1" + ";" + "año no soportado para esta version" + "</error></fila>");
     			return "";
     		}
     	}
@@ -363,16 +363,16 @@ namespace DDJJ1887
 	        {
 	        	int _tipo_registro_paso = 0;
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Tipo Registro" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Tipo Registro" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value.Length != 1)
-	        		errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero de un digito" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero de un digito" + "</error></fila>");
 	        	if (!int.TryParse(value, out _tipo_registro_paso))
 	        	{
-	        		errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero" + "</error></fila>");
 	        	}
 	        	if ( _tipo_registro_paso != 1)
 	        	{
-	        		errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Tipo Registro" + ";" + "valor debe ser el numero 1" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Tipo Registro" + ";" + "valor debe ser el numero 1" + "</error></fila>");
 	        	}
 	        	
 	        	_tipo_registro = _tipo_registro_paso.ToString();
@@ -387,11 +387,11 @@ namespace DDJJ1887
 	        {
 	        	int _determina_orden_preced_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _determina_orden_preced_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (_determina_orden_preced_paso!=2)
-	            	errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor debe el número 2" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor debe el número 2" + "</error></fila>");
 	        	_determina_orden_preced = _determina_orden_preced_paso.ToString();
 	        }
 	    }
@@ -403,7 +403,7 @@ namespace DDJJ1887
 	        set
 	        {
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Dirección Postal" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Dirección Postal" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value.Length > 35 )
 	        	{
 	        		_direccion_postal = value.Substring(0,35);
@@ -423,7 +423,7 @@ namespace DDJJ1887
 	        {
 	        	
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Cómuna" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Cómuna" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value.Length > 15 )
 	        	{
 	        		_comuna = value.Substring(0,15);
@@ -443,7 +443,7 @@ namespace DDJJ1887
 	        set
 	        {
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Correo electrónico" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Correo electrónico" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value.Length < 30)
 	        	{
 	        		value = value.PadRight(30 - value.Length, ' ');
@@ -469,11 +469,11 @@ namespace DDJJ1887
 	        {
 	        	int _codigo_pais_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Código país" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Código país" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _codigo_pais_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Código país" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Código país" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (_codigo_pais_paso != 56)
-	        		errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Código país" + ";" + "Código país debe ser 56" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Código país" + ";" + "Código país debe ser 56" + "</error></fila>");
 	        	_codigo_pais = _codigo_pais_paso.ToString();
 	        }
 	    }
@@ -488,11 +488,11 @@ namespace DDJJ1887
 	        {
 	        	int _cod_area_ciudad_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Código área" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Código área" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _cod_area_ciudad_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Código área" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Código área" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (_cod_area_ciudad_paso < 10 && _cod_area_ciudad_paso > 99)
-	        		errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Código área" + ";" + "valor debe ser numérico de dos digitos" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Código área" + ";" + "valor debe ser numérico de dos digitos" + "</error></fila>");
 	        		
 	        	_cod_area_ciudad = _cod_area_ciudad_paso.ToString();
 	        }
@@ -506,9 +506,9 @@ namespace DDJJ1887
 	        {
 	        	int _telefono_paso = 0;
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Número de Teléfono" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Número de Teléfono" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _telefono_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Número de Teléfono" + ";" + "valor deb eser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Número de Teléfono" + ";" + "valor deb eser numérico" + "</error></fila>");
 	        	if (value.Length > 7)
 	        	{
 	        		_telefono = _telefono_paso.ToString().Substring(0,7);
@@ -531,7 +531,7 @@ namespace DDJJ1887
     			return salida + "".PadRight(248);
     		}else
     		{
-    			errores.escribir_error("<error>" + "DDJJ 1887" + ";" + "retorna_registro_tipo_1_2" + ";" + "año no soportado para esta version" + "</error>");
+    			errores.escribir_error("<fila><error>" + "DDJJ 1887" + ";" + "retorna_registro_tipo_1_2" + ";" + "año no soportado para esta version" + "</error></fila>");
     			return "";
     		}
     	}
@@ -558,16 +558,16 @@ namespace DDJJ1887
 	        {
 	        	int _tipo_registro_paso = 0;
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Tipo Registro" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Tipo Registro" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value.Length != 1)
-	        		errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero de un digito" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero de un digito" + "</error></fila>");
 	        	if (!int.TryParse(value, out _tipo_registro_paso))
 	        	{
-	        		errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Tipo Registro" + ";" + "valor debe ser un numero" + "</error></fila>");
 	        	}
 	        	if ( _tipo_registro_paso != 1)
 	        	{
-	        		errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Tipo Registro" + ";" + "valor debe ser el numero 1" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Tipo Registro" + ";" + "valor debe ser el numero 1" + "</error></fila>");
 	        	}
 	        	_tipo_registro = _tipo_registro_paso.ToString();
 	        }
@@ -581,11 +581,11 @@ namespace DDJJ1887
 	        {
 	        	int _determina_orden_preced_paso = 0;
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _determina_orden_preced_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (_determina_orden_preced_paso!=3)
-	            	errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor debe el número 3" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Orden Preced" + ";" + "valor debe el número 3" + "</error></fila>");
 	        	_determina_orden_preced = _determina_orden_preced_paso.ToString();
 	        }
 	    }
@@ -598,11 +598,11 @@ namespace DDJJ1887
 	        {
 	        	int _codigo_pais_paso = 0;
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Código país" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Código país" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _codigo_pais_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Código país" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Código país" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (_codigo_pais_paso != 56)
-	        		errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Código país" + ";" + "Código país debe ser 56" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Código país" + ";" + "Código país debe ser 56" + "</error></fila>");
 	        	_codigo_pais = _codigo_pais_paso.ToString();
 	        }
 	    }
@@ -615,11 +615,11 @@ namespace DDJJ1887
 	        {
 	        	int _cod_area_ciudad_paso = 0;
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Código área" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Código área" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _cod_area_ciudad_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Código área" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Código área" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (_cod_area_ciudad_paso < 10 && _cod_area_ciudad_paso > 99)
-	        		errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Código área" + ";" + "valor debe ser numérico de dos digitos" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Código área" + ";" + "valor debe ser numérico de dos digitos" + "</error></fila>");
 	        	_cod_area_ciudad = _cod_area_ciudad_paso.ToString();
 	        }
 	    }
@@ -632,9 +632,9 @@ namespace DDJJ1887
 	        {
 	        	int _telefono_paso = 0;
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Número de Teléfono" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Número de Teléfono" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (!int.TryParse(value, out _telefono_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Número de Teléfono" + ";" + "valor debe ser numérico" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Número de Teléfono" + ";" + "valor debe ser numérico" + "</error></fila>");
 	        	if (value.Length > 7)
 	        	{
 	        		_telefono = _telefono_paso.ToString().Substring(0,7);
@@ -652,13 +652,13 @@ namespace DDJJ1887
 	        set
 	        {
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Código Empresa" + ";" + "valor no puede ser vacio" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Código Empresa" + ";" + "valor no puede ser vacio" + "</error></fila>");
 	        	if (value.Length ==2)
 	        	{
 	        		_codigo_empresa = value;
 	        	}else
 	        	{
-	        		errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Código Empresa" + ";" + "Código empresa debe ser de largo 2" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Código Empresa" + ";" + "Código empresa debe ser de largo 2" + "</error></fila>");
 	        	}
 	        	
 	        }
@@ -672,10 +672,10 @@ namespace DDJJ1887
 	        {
 	        	int _numero_cliente_paso = 0;
 	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente no puede ser vacío" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente no puede ser vacío" + "</error></fila>");
 	        	if (!int.TryParse(value, out _numero_cliente_paso))
 	        	{
-	        		errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente debe ser numérico" + "</error>");
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente debe ser numérico" + "</error></fila>");
 	        	}else
 	        	{
 	        		if (value.Length == 4)
@@ -683,7 +683,7 @@ namespace DDJJ1887
 	        			_numero_cliente = value;
 	        		}else
 	        		{
-	        			errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente debe ser numérico de largo 4" + "</error>");
+	        			errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente debe ser numérico de largo 4" + "</error></fila>");
 	        			_numero_cliente = value;
 	        		}
 	        	}
@@ -699,9 +699,9 @@ namespace DDJJ1887
 	        {
 	        	int _unidad_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente debe ser numérico de largo 4" + "</error>");
+	                errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente debe ser numérico de largo 4" + "</error></fila>");
 	        	if (!int.TryParse(value, out _unidad_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente debe ser numérico de largo 4" + "</error>");
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 1 3" + ";" + "Número cliente" + ";" + "Número cliente debe ser numérico de largo 4" + "</error></fila>");
 	        	_unidad = "00000";
 	        }
 	    }
@@ -750,7 +750,7 @@ namespace DDJJ1887
 	    		return salida + "".PadRight(308);
     		}else
     		{
-    			errores.escribir_error("<error>" + "DDJJ 1887" + ";" + "retorna_registro_tipo_1_2" + ";" + "año no soportado para esta version" + "</error>");
+    			errores.escribir_error("<fila><error>" + "DDJJ 1887" + ";" + "retorna_registro_tipo_1_2" + ";" + "año no soportado para esta version" + "</error></fila>");
     			return "";
     		}
     	}

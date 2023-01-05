@@ -36,7 +36,7 @@ namespace DDJJ1887
 		
 		public string recuperar_errores()
 		{
-			_xmlsalida = "<tabla>\n\r<fila>" +  _xmlerrores + "</fila>\n\r</tabla>";
+			_xmlsalida = "<tabla>\n\r" +  _xmlerrores + "</tabla>";
 			return _xmlsalida;
 		}
 		
