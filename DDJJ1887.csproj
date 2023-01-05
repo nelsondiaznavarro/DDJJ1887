@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>DDJJ1887</RootNamespace>
     <AssemblyName>DDJJ1887</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <TargetFrameworkProfile />
   </PropertyGroup>
