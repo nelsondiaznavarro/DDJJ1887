@@ -810,7 +810,7 @@ namespace DDJJ1887
 	                errores.escribir_error("<error>" + "Registro tipo 3 2" + ";" + "Digito Verificador" + ";" + "valor no puede ser vacio" + "</error>");
 	        	if (value.Length !=1)
 	        		errores.escribir_error("<error>" + "Registro tipo 3 2" + ";" + "Digito Verificador" + ";" + "valor debe ser un caracter" + "</error>");
-	        	if (value != validaciones.Digito (int.Parse( numero_rut)))
+	        	if (value != validaciones.Digito (int.Parse( numero_rut_representante)))
 	        		errores.escribir_error("<error>" + "Registro tipo 3 2" + ";" + "Digito Verificador" + ";" + "Rut invalido, error en  Digito Verrificador" + "</error>");
 	        	_digito_verificador = value;
 	        }
