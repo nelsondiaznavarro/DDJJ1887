@@ -15,7 +15,7 @@ namespace DDJJ1887
 	/// </summary>
 	public class registrotipo1_1
 	{
-		private string _blancos = "      ";
+		
 		private string _blancos_ultimo_campo = "".PadRight(260, ' ');
 		
 		
@@ -23,6 +23,17 @@ namespace DDJJ1887
 		
 		public registrotipo1_1()
 		{
+			this.tipo_registro = "1";
+    		this.determina_orden_preced = "1";
+    		this.ano_tributario = DateTime.Now.Year.ToString();
+    		this.numero_formulario = "1887";
+    		this.codigo_presentacion = "I";
+    		this.n_de_folio = "6666666";
+    		this.tipo_declaracion = "O";
+    		this.numero_rut_anterior = "00000000";
+    		this.digito_verificador_anterior = "0";
+    		this.codigo_presentacion_anterior = " "; //I, M ó F: Si Tipo Declaración es "R" (Rectificatoria); Blanco: Si Tipo Declaración es "O" (Original)
+    		this.n_de_folio_anterior = "0000000";  // LARGO 7 >0: Si tipo Declaración es “R” (Rectificatoria) ; =0 Si tipo Declaración es “O” (Original)
 		}
 		
 		
@@ -145,7 +156,7 @@ namespace DDJJ1887
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
 	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Tipo de Declaración" + ";" + "valor no puede ser vacio" + "</error>");
 	        	if (value != "O" && value != "R")
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Tipo de Declaración" + ";" + "valor debe ser la letra I" + "</error>");
+	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Tipo de Declaración" + ";" + "valor debe ser la letra O o la letra R" + "</error>");
 	        	_tipo_declaracion = value;
 	        }
 	    }
@@ -157,10 +168,17 @@ namespace DDJJ1887
 	        set
 	        {
 	        	int _numero_rut_paso = 0;
-	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Rut Anterior" + ";" + "valor no puede ser vacio" + "</error>");
-	        	if (!int.TryParse(value, out _numero_rut_paso))
-	            	errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Rut Anterior" + ";" + "valor debe ser numérico" + "</error>");
+	        	if (this.tipo_declaracion=="R")
+	        	{
+	        	
+		        	if (string.IsNullOrWhiteSpace(value.ToString()))
+		                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Rut Anterior" + ";" + "valor no puede ser vacio" + "</error>");
+		        	if (!int.TryParse(value, out _numero_rut_paso))
+		            	errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Rut Anterior" + ";" + "valor debe ser numérico" + "</error>");
+		        	}
+	        	
+	        	
+	        	
 	        	_numero_rut_anterior = _numero_rut_paso.ToString().PadLeft(8, '0');
 	        }
 	    }
@@ -171,16 +189,28 @@ namespace DDJJ1887
 	        get { return _digito_verificador_anterior; }
 	        set
 	        {
-	        	if (string.IsNullOrWhiteSpace(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Dígito verificador anterior" + ";" + "valor no puede ser vacio" + "</error>");
-	        	if (int.Parse(numero_rut_anterior) > 0)
+	        	
+	        	if (this.tipo_declaracion=="R")
 	        	{
-	        		if (value != validaciones.Digito (int.Parse(numero_rut_anterior)))
-	        		{
-	        			errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Dígito verificador anterior" + ";" + "Error en dígito verificador rut erroneo" + "</error>");
-	        		}
+	        		if (string.IsNullOrWhiteSpace(value.ToString()))
+	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Dígito verificador anterior" + ";" + "valor no puede ser vacio" + "</error>");
+		        	if (int.Parse(numero_rut_anterior) > 0)
+		        	{
+		        		if (value != validaciones.Digito (int.Parse(numero_rut_anterior)))
+		        		{
+		        			errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Dígito verificador anterior" + ";" + "Error en dígito verificador rut erroneo" + "</error>");
+		        		}
+		        	}
+		        	_digito_verificador_anterior = value;
 	        	}
-	        	_digito_verificador_anterior = value;
+		        else
+		        {
+		        		_digito_verificador_anterior = "0";
+	        	}
+	        	
+	        	
+	        	
+	        	
 	        }
 	    }
     	private string _digito_verificador_anterior;
@@ -190,36 +220,49 @@ namespace DDJJ1887
 	        get { return _codigo_presentacion_anterior; }
 	        set
 	        {
-	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor no puede ser vacio" + "</error>");
-	        	if (this.tipo_declaracion == "O")
+	        	if (this.tipo_declaracion=="R")
 	        	{
+	        		if (string.IsNullOrEmpty(value.ToString()))
+	                	errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor no puede ser vacio" + "</error>");
+		        	
 	        		if (value != "I" && value != "M" &&  value != "F" )
 	        			errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor debe ser I,F 0 M" + "</error>");
+		        	_codigo_presentacion_anterior = value;
+	        	}else
+	        	{
+	        		_codigo_presentacion_anterior = " ";
 	        	}
-	        	
-	        		
-	        	_codigo_presentacion_anterior = value;
+	         	
 	        }
 	    }
     	private string _codigo_presentacion_anterior;
+   
     	
     	public string n_de_folio_anterior
 	    {
 	        get { return _n_de_folio_anterior; }
 	        set
 	        {
-	        	int _n_de_folio_anterior_paso = 0;
-	        	if (string.IsNullOrEmpty(value.ToString()))
-	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Múmero Folio anterior" + ";" + "valor no puede ser vacio" + "</error>");
-	        	if (this.tipo_declaracion == "O")
+	        	
+	        	if (this.tipo_declaracion=="R")
 	        	{
-	        		if (!int.TryParse(value, out _n_de_folio_anterior_paso))
+	        		int _n_de_folio_anterior_paso = 0;
+		        	if (string.IsNullOrEmpty(value.ToString()))
+		                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Múmero Folio anterior" + ";" + "valor no puede ser vacio" + "</error>");
+		        	
+		        	if (!int.TryParse(value, out _n_de_folio_anterior_paso))
 	        			errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor debe ser I,F 0 M" + "</error>");
 	        		if (_n_de_folio_anterior_paso < 1)
 	        			errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Código presentación anterior" + ";" + "valor debe ser mayor a 0" + "</error>");
+	        		_n_de_folio_anterior = _n_de_folio_anterior_paso.ToString().PadLeft(7,'0');
+		        }else
+	        	{
+	        		_n_de_folio_anterior = "0000000";
 	        	}
-	        	_n_de_folio_anterior = value;
+	        	
+	        	
+	        
+	        	
 	        }
 	    }
     	private string _n_de_folio_anterior;
@@ -265,12 +308,12 @@ namespace DDJJ1887
 	                errores.escribir_error("<error>" + "Registro tipo 1" + ";" + "Razón Social" + ";" + "Debe tener al menos 1 caracter alfanumérico" + "</error>");
 	        	if (value.Length < 30)
 	        	{
-	        		value = value.PadRight(30 - value.Length, ' ');
+	        		_razon_social = value.PadRight(30 - value.Length, ' ');
 	        	}else
 	        	{
-	        		value = value.Substring(0,29);
+	        		_razon_social = value.Substring(0,30);
 	        	}
-	        	_razon_social = value;
+	        	
 	        }
 	    }
     	private string _razon_social;
@@ -281,17 +324,7 @@ namespace DDJJ1887
     		if (anodj == 2023)
     		{
     		
-	    		this.tipo_registro = "1";
-	    		this.determina_orden_preced = "1";
-	    		this.ano_tributario = DateTime.Now.Year.ToString();
-	    		this.numero_formulario = "1887";
-	    		this.codigo_presentacion = "I";
-	    		this.n_de_folio = "6666666";
-	    		this.tipo_declaracion = "O";
-	    		this.numero_rut_anterior = "00000000";
-	    		this.digito_verificador_anterior = "0";
-	    		this.codigo_presentacion_anterior = " "; //I, M ó F: Si Tipo Declaración es "R" (Rectificatoria); Blanco: Si Tipo Declaración es "O" (Original)
-	    		this.n_de_folio_anterior = "0000000";  // LARGO 7 >0: Si tipo Declaración es “R” (Rectificatoria) ; =0 Si tipo Declaración es “O” (Original)
+	    		
 	    		string blancos_6 = "      ";
 	    		string blancos_260 = "".PadLeft(260,' ');
 	    		string salida =  this.tipo_registro +   this.determina_orden_preced +  this.ano_tributario + this.numero_formulario
@@ -373,7 +406,7 @@ namespace DDJJ1887
 	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Dirección Postal" + ";" + "valor no puede ser vacio" + "</error>");
 	        	if (value.Length > 35 )
 	        	{
-	        		_direccion_postal = value.Substring(0,34);
+	        		_direccion_postal = value.Substring(0,35);
 	        	}else
 	        	{
 	        		_direccion_postal = value.ToString().PadRight(35, ' ');
@@ -393,7 +426,7 @@ namespace DDJJ1887
 	                errores.escribir_error("<error>" + "Registro tipo 1 2" + ";" + "Cómuna" + ";" + "valor no puede ser vacio" + "</error>");
 	        	if (value.Length > 15 )
 	        	{
-	        		_comuna = value.Substring(0,14);
+	        		_comuna = value.Substring(0,15);
 	        	}else
 	        	{
 	        		_comuna = value.ToString().PadRight(15, ' ');;
@@ -418,7 +451,13 @@ namespace DDJJ1887
 	        	{
 	        		value = value.Substring(0,29);
 	        	}
+	        	//Todo
+	        	//agregar validacion de formato de correo
+	        	
 	        	_correo_electronico = value;
+	        	
+	        	
+	        	
 	        }
 	    }
     	private string _correo_electronico;
@@ -440,6 +479,8 @@ namespace DDJJ1887
 	    }
     	private string _codigo_pais;
     	
+    	
+    	//si no viene en el xml de cliente llenar con ceros telefono y codigo de ciudad
     	public string cod_area_ciudad
 	    {
 	        get { return _cod_area_ciudad; }
@@ -487,7 +528,7 @@ namespace DDJJ1887
     			string salida = this.tipo_registro + this.determina_orden_preced 
    								+ this.direccion_postal + this.comuna + this.correo_electronico
 								+ this.codigo_pais + this.cod_area_ciudad + this.telefono 		;
-    			return salida + "".PadRight(248 - salida.Length);
+    			return salida + "".PadRight(248);
     		}else
     		{
     			errores.escribir_error("<error>" + "DDJJ 1887" + ";" + "retorna_registro_tipo_1_2" + ";" + "año no soportado para esta version" + "</error>");
@@ -703,7 +744,7 @@ namespace DDJJ1887
     	{
     		if (anodj == 2023)
     		{
-	    		string salida = this.tipo_registro + this.determina_orden_preced + this.codigo_pais + this.cod_area_ciudad + this.telefono 
+	    		string salida = this.tipo_registro + this.determina_orden_preced + this.codigo_pais + this.cod_area_ciudad + this.telefono  + " "
 	    			+ this.codigo_empresa + this.numero_cliente + this.unidad + this.numero_caja + this.numero_paquete;
 	
 	    		return salida + "".PadRight(308);

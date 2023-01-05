@@ -5,3 +5,9 @@ C:\Desarrollo\PruebaDDJJ1887\DDJJ1887\bin\Debug\DDJJ1887.pdb
 C:\Desarrollo\PruebaDDJJ1887\DDJJ1887\bin\Debug\xml.dll
 C:\Desarrollo\PruebaDDJJ1887\DDJJ1887\obj\Debug\DDJJ1887.exe
 C:\Desarrollo\PruebaDDJJ1887\DDJJ1887\obj\Debug\DDJJ1887.pdb
+C:\Desarrollo\Git\DDJJ1887\bin\Debug\DDJJ1887.exe.config
+C:\Desarrollo\Git\DDJJ1887\bin\Debug\DDJJ1887.exe
+C:\Desarrollo\Git\DDJJ1887\bin\Debug\DDJJ1887.pdb
+C:\Desarrollo\Git\DDJJ1887\obj\Debug\DDJJ1887.csprojResolveAssemblyReference.cache
+C:\Desarrollo\Git\DDJJ1887\obj\Debug\DDJJ1887.exe
+C:\Desarrollo\Git\DDJJ1887\obj\Debug\DDJJ1887.pdb

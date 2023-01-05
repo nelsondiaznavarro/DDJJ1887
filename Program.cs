@@ -269,7 +269,7 @@ namespace DDJJ1887
 					miregistrotipo2.imp_uni_sgda_cat_ret = MiXml.get("impuesto",contador);
 					miregistrotipo2.renta_total_no_grabada = MiXml.get("renta_no_grabada",contador);
 					miregistrotipo2.renta_total_exenta = MiXml.get("renta_exenta",contador);
-					miregistrotipo2.rebaja_zona_exenta = MiXml.get("rebaja_zona",contador);
+					miregistrotipo2.rebaja_zona_extrema = MiXml.get("rebaja_zona",contador);
 					miregistrotipo2.prestamos_tasa_0_2020_2021 = MiXml.get("prestamo_solidario",contador);
 					miregistrotipo2.prestamos_enero = MiXml.get("m01",contador)=="" ? "0" :MiXml.get("m01",contador) ;
 					miregistrotipo2.prestamos_febrero =MiXml.get("m02",contador)=="" ? "0" :MiXml.get("m02",contador) ;
@@ -362,7 +362,7 @@ namespace DDJJ1887
 			miregistrotipo3_1.renta_total_neta_pagada =MiXml.get("renta_imponible",0);
 			miregistrotipo3_1.imp_uni_ret_seg_cat = MiXml.get("imp_seg_categoria",0);
 			miregistrotipo3_1.imp_uni_ret_seg_cat_comp_ene_abr =  MiXml.get("impuesto",0);
-			miregistrotipo3_1.renta_total_no_pagada = MiXml.get("renta_no_grabada",0);
+			miregistrotipo3_1.renta_total_no_grabada = MiXml.get("renta_no_grabada",0);
 			miregistrotipo3_1.renta_total_exenta =  MiXml.get("renta_exenta",0);
 			miregistrotipo3_1.prestamos_tasa_0 = MiXml.get("prestamo_solidario",0);
 			miregistrotipo3_1.total_remuneracion_imp_actual = MiXml.get("renta_imponible",0);
