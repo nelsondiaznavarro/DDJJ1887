@@ -15,11 +15,10 @@ namespace DDJJ1887
 	/// </summary>
 	public class registrotipo3_1
 	{
-		
+		private string _blancos = "".PadLeft(206, '0');
 		
 		public registrotipo3_1()
 		{
-			this.imp_uni_ret_seg_cat_comp_ene_abr = "0";
 		}
 		
 		public  errores errores  {get; set;}
@@ -304,22 +303,11 @@ namespace DDJJ1887
 	        	int _total_remuneracion_imp_actual_paso = 0;
 	        	if (string.IsNullOrWhiteSpace(value.ToString()))
 	                errores.escribir_error("<fila><error>" + "Registro tipo 3 1" + ";" + "Total Remuneracion imponible" + ";" + "valor no puede ser vacio" + "<fila><error>");
-		        	if (!int.TryParse(value, out _total_remuneracion_imp_actual_paso))
-		        	{
-		        		if (_renta_total_neta_paso < 1 )
-		        		{
-		        			errores.escribir_error("<fila><error>" + "Registro tipo 3 1" + ";" + "Renta total Neta" + ";" + "valor debe ser mayor a cero" + "<fila><error>");
-		        		}else
-		        		{
-		        			_total_remuneracion_imp_actual = _total_remuneracion_imp_actual_paso.ToString().PadLeft(15,'0');
-		        		}
-		        	}
-		        	
-	        	}
-	            	
-	        	
+	        	if (!int.TryParse(value, out _total_remuneracion_imp_actual_paso))
+	            	errores.escribir_error("<fila><error>" + "Registro tipo 3 1" + ";" + "Total Remuneracion imponible" + ";" + "valor debe ser numérico" + "<fila><error>");
+	        	_total_remuneracion_imp_actual = _total_remuneracion_imp_actual_paso.ToString().PadLeft(15,'0');
 	        }
-	    
+	    }
     	private string _total_remuneracion_imp_actual;
     	
     	//MONTO INGRESO MENSUAL (SIN ACTUALIZAR)
@@ -519,7 +507,7 @@ namespace DDJJ1887
 							+ this.monto_ing_men_s_act_ene + this.monto_ing_men_s_act_feb +     this.monto_ing_men_s_act_mar + this.monto_ing_men_s_act_abr + this._monto_ing_men_s_act_may 
     						+ this.monto_ing_men_s_act_jun + this.monto_ing_men_s_act_jul	+ this.monto_ing_men_s_act_ago + this._monto_ing_men_s_act_sep + this.monto_ing_men_s_act_oct		
     						+ this.monto_ing_men_s_act_nov + this.monto_ing_men_s_act_dic	;
-    			return salida ;
+    			return salida + "".PadRight(341 - salida.Length);
     		}else
     		{
     			errores.escribir_error("<fila><error>" + "DDJJ 1887" + ";" + "retorna_registro_tipo_3_1" + ";" + "año no soportado para esta version" + "<fila><error>");
@@ -536,7 +524,7 @@ namespace DDJJ1887
 		{
 			//Inicializacion de valores constantes
 			this.dia_presentacion = "00";
-			this.mes_presentacion = "   ";
+			this.mes_presentacion = "000";
 			this.ano_presentacion = "0000";
 		}
 		
