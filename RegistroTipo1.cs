@@ -444,6 +444,9 @@ namespace DDJJ1887
 	        {
 	        	if (string.IsNullOrEmpty(value.ToString()))
 	                errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Correo electrónico" + ";" + "valor no puede ser vacio" + "</error></fila>");
+	        	if (validaciones.IsValidEmail (value))
+	        		errores.escribir_error("<fila><error>" + "Registro tipo 1 2" + ";" + "Correo electrónico" + ";" + "Error en formato de correo electrónico" + "</error></fila>");
+	        	
 	        	if (value.Length < 30)
 	        	{
 	        		value = value.PadRight(30 - value.Length, ' ');
